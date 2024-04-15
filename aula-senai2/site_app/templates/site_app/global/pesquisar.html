@@ -1,0 +1,82 @@
+{% extends "site_app/global/index.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Início</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/cadastro">Cadastro de Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'criar' %}">Criar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'pesquisar' %}">Pesquisar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'atualizar' %}">Atualizar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'deletar' %}">Deletar</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <!-- Adicionando ms-auto para alinhar à direita -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Voltar ao topo</a>
+          <!-- Novo link alinhado à direita -->
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid mt-3">
+  <h4>Pesquisar Cliente Cadastrado:</h4>
+  <br>
+  {% include "site_app\partials\search.html" %}
+  
+  <div style="width: 1000px;">
+    {% if nome %}
+    <h5>Pesquisar Clientes Cadastros:</h5>
+    {% endif %}
+
+    {% if dados %}
+    <br>
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>NOME</th>
+          <th>EMAIL</th>
+          <th>IDADE</th>
+          <th>PAÍS ONDE QUER MORAR</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in dados %}
+        <tr>
+          <td>{{row.id}}</td>
+          <td>{{row.nome}}</td>
+          <td>{{row.email}}</td>
+          <td>{{row.idade}}</td>
+          <td>{{row.pais}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <br>
+    <div class="h3">
+        <p>Não foi encontrado nenhum dado!</p>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,33 @@
+ {% extends "site_app/global/index.html" %}
+
+{% block content %}
+
+<div class="container-fluid mt-3">
+
+    <h3>Detalhes:</h3>
+
+    <div class="container mt-3">
+
+        <div class="row">
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="card">
+
+                    <img src="{{detalhesprodutos.img}}" class="card-img-top"alt="Card image">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{detalhesprodutos.titulo}}</h5>
+                        <p class="card-text">{{detalhesprodutos.descricao}}</p>
+                        <p class="card-text">Preço: R$ {{ detalhesprodutos.preco }}</p>
+                        <a href="#{{detalhesprodutos.id}}"class="btn btn-primary">Adicionar ao carrinho</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "site_app/global/index.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid mt-3">
+  <div style="text-align: center; margin-top: 50px; margin-bottom: 50px;"> 
+    <h3>Viage pelo mundo com a lanchonete Mundo dos Sabores</h3>
+    <br>
+    <img src="{% static 'site_app/img/img1.jpg' %}" alt="Imagem de fundo" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 20px;">
+    <h5>A lanchonete Mundo dos Sabores está com uma mega promoção para os seus clientes, basta se cadastrar no nosso site na aba cadastro de clientes e concorra a uma viagem com tudo pago para o país onde você sonha em morar, cadastre-se agora mesmo e participe, não perca tempo!</h5>
+  </div>
+</div>
+
+{% endblock content %}

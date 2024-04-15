@@ -1,0 +1,7 @@
+<form action="{% url 'pesquisar' %}" method="post">
+
+    {% csrf_token %}
+
+    <input type="text" name="nome" placeholder="Nome Completo">
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+  </form>

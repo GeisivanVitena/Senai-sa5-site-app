@@ -1,0 +1,68 @@
+{% extends "site_app/global/index.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Início</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/cadastro">Cadastro de Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'criar' %}">Criar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'pesquisar' %}">Pesquisar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'atualizar' %}">Atualizar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'deletar' %}">Deletar</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <!-- Adicionando ms-auto para alinhar à direita -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Voltar ao topo</a>
+          <!-- Novo link alinhado à direita -->
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid mt-3">
+  
+
+  <h4>Cadastrar Novo Cliente:</h4>
+  <br>
+  <form action="{% url 'criar' %}" method="post">
+
+    {% csrf_token %}
+
+    <input type="text" name="nome" placeholder="Nome Completo">
+    <input type="text" name="email" placeholder="E-mail">
+    <input type="number" name="idade" placeholder="Idade">
+    <input type="text" name="pais" placeholder="País onde quer morar">
+    <button type="submit" class="btn btn-success">Salvar</button>
+  </form>
+  {% if nome %} 
+  <br>
+  <h5>Cliente Cadastrado com Sucesso!</h5>
+  <br>
+  <h6>Dados Obtidos:</h6>
+  <br>
+  <p><strong>Nome: </strong>{{nome}}</p>
+  <p><strong>E-mail: </strong>{{email}}</p>
+  <p><strong>Idade: </strong>{{idade}}</p>
+  <p><strong>País onde quer morar: </strong>{{pais}}</p>
+  {% endif %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "site_app/global/index.html" %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+    <h3>Atualize seus dados:</h3>
+    <form action="{% url 'atualizar_id' cliente.id %}" method="post">
+
+      {% csrf_token %}
+
+      <input type="text" name="nome" value="{{cliente.nome}}" placeholder="Nome Completo">
+      <input type="text" name="email" value="{{cliente.email}}" placeholder="exemple@exemple.com">
+      <input type="number" name="idade" value="{{cliente.idade}}" placeholder="Idade">
+      <input type="text" name="pais" value="{{cliente.pais}}" placeholder="País onde quer morar">
+      <button type="submit" class="btn-blue">Salvar</button>
+    </form>
+  </div>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "site_app/global/index.html" %}
+
+{% block content %}
+<h3>Lanches:</h3>
+<br>
+<div class="container-fluid mt-3">
+    <div class="container mt-3">
+        <div class="row">
+
+            {% for n in produtos %}
+
+            <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <img src="{{ n.img }}" class="card-img-top"alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ n.titulo }}</h5>
+                        <a href="/detalhes/{{ n.id }}"class="btn btn-primary">Mais detalhes</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}
