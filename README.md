@@ -1,4 +1,4 @@
-Sistema web para gerenciamento de vendas
+# Sistema web para gerenciamento de vendas
 
 Este projeto é um sistema web desenvolvido para gerenciar as vendas de uma lanchonete. 
 
@@ -6,7 +6,7 @@ O sistema permite o cadastro de clientes, gerenciamento de informações, e a in
 
 A aplicação foi construída utilizando Python, Django, HTML, CSS, e JavaScript.
 
-Funcionalidades:
+## Funcionalidades:
 
 Cadastro de Clientes: Permite o registro de novos clientes no sistema.
 
@@ -18,7 +18,7 @@ Atualização de Dados: Permite atualizar as informações de clientes já cadas
 
 Exclusão de Clientes: Permite excluir registros de clientes do banco de dados.
 
-Estrutura do Projeto:
+## Estrutura do Projeto:
 
 atualizar.html: Página para atualização de informações no sistema.
 
@@ -38,7 +38,7 @@ produtos.html: Exibe os produtos disponíveis no sistema.
 
 update.html: Página para atualização de dados no sistema.
 
-Tecnologias Utilizadas:
+## Tecnologias Utilizadas:
 
 Back-end: Python, Django
 
@@ -46,7 +46,7 @@ Front-end: HTML, CSS, JavaScript
 
 Banco de Dados: MySQL
 
-Como Rodar o Projeto:
+## Como Rodar o Projeto:
 
 1 - Clone o repositório:
 
